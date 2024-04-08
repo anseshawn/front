@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test14.html</title>
+  <style>
+    * { /* 전체셀렉터(*): 처음 값 세팅할 때 많이 씀 */
+      /* 처음 설정으로 css reset(초기값) 을 먼저 설정해서 링크로 걸어서 많이 씀 */
+      margin: 0px;
+      padding: 0px;
+    }
+    table {
+      border-collapse: collapse;
+      background-color: khaki;
+    }
+    
+    #tbl {
+      text-align: center;
+    }
+    th {
+      padding: 20px;
+    }
+    th, td{
+      padding: 20px;
+      border: 1px solid crimson;
+      color: gray;
+    }
+
+    #tbl {
+      /* position: absolute; */
+      position: fixed;
+      left: 200px; /* 왼쪽 위가 0, 오른쪽이 +x축, 아래쪽이 +y축 */
+      top: 300px;
+      /* absolute: 윈도우가 시작, fixed: 화면이 시작(스크롤과 함께 움직임) */
+      z-index: 10;
+    }
+
+    .imgC {
+      position: relative;
+      /* 바로 전단계(바로 앞의 그림) 기준으로 */
+      left: 200px;
+      top: 300px;
+    }
+
+    #top_arrow {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      border-width: 0px;
+    }
+
+    .imgE {
+      position: absolute;
+      left: 300px;
+      top: 400px;
+      z-index: 5;
+      /* z축 기준을 설정해서 다른 스타일에 z축을 설정하면 상대적으로 위아래 위치가 설정됨 */
+    }
+    
+  </style>
+</head>
+<body>
+  <h2><a name="first">포지션(Position)</a></h2>
+  <div>
+    옵션 : static(기본), relative(상대위치), absolute(절대위치), fixed(고정)
+  </div>
+  <a href="#first">
+  <img src="../../images/7.jpg" id="top_arrow" width="60px" />
+  </a>
+  <h2>표에 스타일 적용하기</h2>
+  <div id="tbl_main">
+    <table id="tbl" style="text-align: right;">
+      <tr class="aa">
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+      </tr>
+      <tr class="bb">
+        <td>11</td>
+        <td>12</td>
+        <td>13</td>
+      </tr>
+      <tr class="aa">
+        <td>21</td>
+        <td>22</td>
+        <td>23</td>
+      </tr>
+      <tr class="bb">
+        <td>31</td>
+        <td>32</td>
+        <td>33</td>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <img src="../../images/2.jpg" width="300px" height="250" class="imgA imgB" title="imgB"/>
+    <img src="../../images/3.jpg" width="300px" height="250" class="imgA imgC" title="imgC"/>
+    <img src="../../images/6.jpg" width="300px" height="250" class="imgA"/>
+    <img src="../../images/7.jpg" width="300px" height="250" class="imgA imgE"/>
+    <p class="dd">
+      <img src="../../images/7.jpg" width="300px" height="250" class="imgD"/>
+    </p>
+  </div>
+  <div>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p style="text-align: center;">배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+    <p>배경 그림연습</p>
+  </div>
+</body>
+</html>

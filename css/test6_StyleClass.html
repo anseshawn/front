@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test6.html</title>
+  <style type="text/css" rel="stylesheet">
+    p {
+      font-size: 20pt;
+      color: rgba(214, 0, 0,1)
+    }
+    .atom {color:blue;}
+    #mbc {color: yellow}
+    .kbs {background-color: burlywood;}
+  </style>
+  <!-- class는 .으로 호출, id는 #으로 호출(id는 본문에 무조건 한번만 나와야 함) -->
+</head>
+<body background="../../images/5.jpg">
+  <h2>외부 스타일시트(In Line Style)</h2>
+  <p>1.<span class="kbs">안녕</span>하세요</p>
+  <p>2.<span class="atom">안녕</span>하세요</p> <!-- 클래스명 붙여준 후 style에서 클래스명으로 호출 -->
+  <!-- span: 의미없는 태그. 특정 글자들을 지정해서 스타일 줄 때 클래스명 붙여서 사용 
+      (스타일 주려면 태그가 있어야하는데 붙어있는 태그가 없기 때문에 span을 사용) -->
+  2-1.반갑습니다.<br/>
+  <p>3.안녕하세요</p>
+  3-1.<span class="atom">반갑</span>습니다.<br/>
+  <p class="atom">4.안녕하세요</p>
+  <!-- class는 in line개념이기 때문에 이너스타일 이후에 적용됨 -->
+  <div class="kbs">4-1.반갑습니다.</div>
+  <p>5.안녕하세요</p>
+  5-1.반갑습니다.<br/>
+  <p>6.안녕하세요</p>
+  <div id="mbc">6-1.반갑습니다.</div>
+  <p>7.안녕하세요</p>
+  7-1.반갑습니다.<br/>
+  <p>8.안녕하세요</p>
+  <div id="mbc">8-1.반갑습니다.</div>
+</body>
+</html>
