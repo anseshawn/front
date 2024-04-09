@@ -1,0 +1,48 @@
+/* test29.css */
+body {
+  margin: 0px;
+  font-size: 0.8em;
+}
+.container {
+  background-color: wheat;
+  height: 100vh; /* vh: %랑 비슷하지만 여백 남는부분 없이 꽉 채움 */
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.item {
+  width: 150px;
+  height: 150px;
+  border: 1px solid gray;
+  text-align: center;
+}
+
+.item1 {
+  background-color: lightpink;
+  order: 1;
+  /* flex-basis: 30%; */
+  flex-shrink: 2;
+  flex-grow: 1;
+}
+.item2 {
+  background-color: lightsteelblue;
+  /* flex-basis: 20%; */
+  order: 2;
+  flex-grow: 2;
+}
+.item3 {
+  background-color: lightpink;
+  order: 3;
+  flex-grow: 3;
+}
+
+.item4 {background-color: dimgray;}
+.item5 {background-color: gainsboro;}
+.item6 {background-color: lightcoral;}
+.item7 {background-color: midnightblue;}
+.item8 {background-color: blanchedalmond;}
+.item9 {background-color: lightcyan;}
+.item10 {background-color: darkviolet;}

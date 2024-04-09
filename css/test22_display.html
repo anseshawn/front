@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test22.html</title>
+  <style>
+    .aa1, .aa2, .aa3 {
+      background-color: powderblue;
+      display: inline;
+    }
+    .aa4 {
+      background-color: palegoldenrod;
+      /* display: none; */
+      visibility: hidden;
+      /* visibility: 영역은 남겨놓고 내용이 안 보임, display: 영역까지 보이지 않음 */
+    }
+    .aa5, .aa6, .aa7 {
+      background-color: palegreen;
+      border: 1px solid gray;
+      width: 400px;
+    }
+    .bb1 {
+      display: inline;
+      /* display: block; */
+      /* display: inline-block; */
+      border: 1px solid red;
+      width: 100px;
+      padding: 10px;
+    }
+    .bb1:hover {
+      background-color: wheat;
+    }
+
+    .bb2 {
+      /* display: inline; */
+      /* display: block; */
+      display: inline-block;
+      border: 1px solid red;
+      width: 100px;
+      padding: 10px;
+    }
+    .bb2:hover {
+      background-color: wheat;
+    }
+
+    .bb3 {
+      /* display: inline; */
+      display: block;
+      /* display: inline-block; */
+      border: 1px solid red;
+      width: 100px;
+      padding: 10px;
+    }
+    .bb3:hover {
+      background-color: wheat;
+    }
+  </style>
+</head>
+<body>
+  <h2>Display 속성</h2>
+  <p>각각의 요소들을 어떻게 보여줄지를 결정한다.</p>
+  <p>
+    속성처리 : visibility(기본값: 보이기) / hidden(감추기) / inherit(부모요소의 값을 상속 받아서 사용)
+  </p>
+  <p>
+    <b>Display 속성</b>
+    none : <span>화면</span>에서 완전히 사라지게 한다.<br/>
+  </p>
+  <hr/>
+  <h3>사용 예제</h3>
+  <div class="aa1">1.안녕</div>
+  <div class="aa2">2.안녕</div>
+  <div class="aa3">3.안녕</div>
+  <div class="aa4">4.안녕</div>
+  <hr/>
+  <h2>Block / InLine / InLine-Block</h2>
+  <!-- InLine: 자기 몸만
+      Block: 라인 전체를 감싸기
+      InLine-Block: 영역을 차지하면서 InLine을 쓰고 싶을 때 (지정한 영역을 가지고 있으면서 Line 유지) -->
+  <div class="aa5">
+    5.<font color="red" class="bb1">안녕(InLine)</font>감사합니다.
+    <!-- 같은 줄이면 InLine, 줄이 바뀌면 Block (font: InLine 태그) -->
+  </div>
+  <div class="aa6">
+    6.<span class="bb2"><font color="pink">안녕(InLine-Block)</font></span>
+  </div>
+  <div class="aa7">
+    7.<span class="bb3"><font color="blueviolet">안녕(Block)</font></span>
+  </div>
+</body>
+</html>
