@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    function cal(value) {
+      let su1 = "";
+      let su2 = "";
+      let op = "";
+      let res = eval(su1 + op + su2);
+      let resop = "";
+      if(value == "+") op = "+";
+      else if(value == "-") op = "-";
+      else if(value == "*") op = "*";
+      else if(value == "/") op = "/";
+      su1 += value;
+      document.getElementById("print").value = su1;
+      if(op == "+" || op == "-" || op == "*" || op == "/") {
+        value = "";
+        su2 += value;
+        document.getElementById("print").value = su2;
+      }
+      else if(value == "="){
+        res = eval(su1 + op + su2);
+        document.getElementById("print").innerText = res;
+      }
+      else{
+        su1 += value;
+        document.getElementById("print").innerText = su1;
+      }
+      
+      // alert("su1 : "+su1);
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>계산기</h2>
+  <table class="table table-bordered text-center">
+    <tr>
+      <td colspan="4">
+        <!-- <div id="print"></div> -->
+        <input type="text" name="res" id="print" readonly class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" name="number" id="number7" value="7" onclick="cal(value)" class="btn btn-lg"/>
+      </td>
+      <td>
+        <input type="button" name="number" id="number8" value="8" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="number" id="number9" value="9" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="op" id="opdiv" value="/" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" name="number" id="number4" value="4" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="number" id="number5" value="5" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="number" id="number6" value="6" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="op" id="opmul" value="*" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" name="number" id="number1" value="1" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="number" id="number2" value="2" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="number" id="number3" value="3" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="op" id="opmin" value="-" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="button" name="number" id="number0" value="0" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="number" id="point" value="." onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="op" id="opres" value="=" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+      <td>
+        <input type="button" name="op" id="oppl" value="+" onclick="cal(value)" class="btn btn-lg" />
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
