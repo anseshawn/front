@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    'use strict'; // 타입 선언되지 않은 변수를 잡아냄
+
+    var aa = 100;
+    console.log("1.aa : ", aa);
+    var aa = 3.14;
+    console.log("2.aa : ", aa);
+    aa = "Korea";
+    console.log("3.aa : ", aa);
+
+    let bb = 200;
+    console.log("1.bb : ", bb);
+    // let 선언은 중복될 수 없음
+    bb = 3.141592;
+    console.log("2.bb : ", bb);
+    bb = "Seoul";
+    console.log("3.bb : ", bb);
+    
+    const cc = 300;
+    console.log("1.cc : ", cc);
+    // cc = 3.14;
+    // console.log("2.cc : ", cc);
+    // const: 상수는 중복으로 선언해줄 수 없음 자바의 static final과 비슷(값을 한번 넣으면 바꿀 수 없음)
+
+    dd = 400;
+    console.log("dd : ", dd);
+  </script>
+  <title>test3.html</title>
+</head>
+<body>
+  <h2>본문입니다.</h2>
+</body>
+</html>

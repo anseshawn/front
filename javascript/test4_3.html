@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test4_3.html</title>
+  <script>
+    document.write("안녕111<br/>");
+    
+    atom1(); // function 선언 앞에 해도 적용됨
+    function atom1() {
+      // document.write("atom1함수 : 안녕22222<br/>");
+      alert("atom1함수 : 안녕222222");
+    }
+    </script>
+</head>
+<body>
+  <h2>이곳은 본문</h2>
+
+  <input type="button" value="atom1" onclick="atom1()" />
+  <!-- button: jsp호출시 사용, on~: 해당 이벤트 발생시 해당 함수 수행 -->
+  <!-- <input type="button" value="atom2" onclick="atom2()" /> -->
+  <button type="button" onclick="atom2()">atom2호출</button>
+  <button type="button" onclick="atom3()">atom3호출</button>
+
+  <script>
+    function atom2() {
+      // document.write("atom2함수 : 안녕33333<br/>");
+      alert("atom2함수 : 안녕333333");
+    }
+    function atom3() {
+      atom1();
+      atom2();
+      alert("작업종료!!");
+    }
+  </script>
+</body>
+</html>

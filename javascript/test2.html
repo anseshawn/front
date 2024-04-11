@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test2.html</title>
+</head>
+  <script>
+    document.write("<p>안녕1</p>");
+    document.write('<font size="5" color="red">안녕2</font><br/>');
+    // html명령어 따옴표 안에 쓰기(바깥과 안쪽은 큰따옴표와 작은따옴표 각각 다르게)
+    document.write("<p style='text-align:center'>안녕3</p>");
+    document.write("<p>안녕's</p>");
+    document.write('<p>안녕\'s</p>');
+    // 따옴표를 출력하고 싶은 경우 역슬래시와 함께 사용
+
+    console.log("반갑습니다.1");
+    // console log : body태그 본문 출력 x
+    console.clear(); // 콘솔 지우기
+    console.log("반갑습니다.2");
+    console.log("clg"); // 확장프로그램 단축키 clg --> console.log
+    console.clear(); // 확장프로그램 단축키 ccl
+
+    var atom = 100; // 변수 타입 상관없이 var
+    console.log("atom : ", atom);
+    alert("atom : "+atom);
+    //alert("메세지 출력"); // 한번 찍어볼때 사용하기 좋음
+    document.write("alert명령 이후 출력??");
+    console.log("2.atom : ", atom);
+  </script>
+<body>
+  <h3>이곳은 body태그 안쪽입니다.</h3>
+</body>
+</html>

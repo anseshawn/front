@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test4_1.html</title>
+  <script>
+    document.write("안녕111<br/>");
+    
+    atom1(); // function 선언 앞에 해도 적용됨
+    function atom1() {
+      document.write("안녕22222<br/>");
+    }
+    // atom1();
+    // atom2();
+    // script 안에 있는 함수는 미리 빼서 메소드 영역에 올리지만 body 태그는 먼저 실행하라는 명령을 주지 않는 이상 인식하지 못함
+    </script>
+</head>
+<body>
+  <h2>이곳은 본문</h2>
+  <script>
+    function atom2() {
+      document.write("안녕33333<br/>");
+    }
+  </script>
+</body>
+</html>
