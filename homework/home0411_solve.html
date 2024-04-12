@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/df66332deb.js" crossorigin="anonymous"></script><!-- https://www.angularjswiki.com/fontawesome/cdn/ -->
+  <style>
+    .container {padding: 0; max-width: 400px;}
+    .res-box {height: 120px; border-radius: 5px; margin-bottom: 10px; text-align: right; padding: 10px;}
+    #res {font-size: 32px; font-weight: 600; }
+    .res-box p:first-child{background-color: #fff; width: 100%; overflow: auto;}
+    ul {width: 100%; padding: 0; }
+    ul:after {clear: both; display: block; content: "";}
+    ul li {width:calc(25% - 2px); margin:1px; float:left; list-style-type: none;}
+    ul li button {width:100%; background-color: #fff; border-radius: 5px;}
+    ul li button:hover {background-color: #ffc107;}
+  </style>
+  <script>
+    'use strict';
+    let res="0";
+    let express_text="";
+    
+    function ce(){
+      document.getElementById("res").innerText = "0";
+      document.getElementById("express_text").innerText = "";
+      res="0";
+      express_text="";
+    }
+    function backspace() {
+      express_text = document.getElementById("express_text").innerText;
+      document.getElementById("express_text").innerText = express_text.substring(0, express_text.length - 1);
+      express_text = document.getElementById("express_text").innerText;
+    }
+    function clickBtn(txt){
+      express_text += txt;
+      document.getElementById("express_text").innerText = express_text;
+      if(res != "") document.getElementById("res").innerText = "";
+    }
+    function result(){
+      res = eval(express_text);
+      document.getElementById("res").innerText = res;
+      express_text="";
+      res=0;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2 class="text-center m-5">계산기</h2>
+    <!-- 계산기화면 -->
+    <div class="res-box bg-warning">
+      <p>&nbsp;<span id="express_text"></span></p>
+      <p><span id="res"></span></p>
+    </div>
+    <ul>
+      <li><button onclick="ce()">CE</button></li>
+      <li><button onclick="clickBtn('&#40;')">&#40;</button></li> <!-- 왼쪽괄호 -->
+      <li><button onclick="clickBtn('&#41;')">&#41;</button></li> <!-- 오른쪽괄호 -->
+      <li><button onclick="clickBtn('*')">&#215;</button></li> <!-- 곱하기 -->
+      <li><button onclick="clickBtn('1')">1</button></li>
+      <li><button onclick="clickBtn('2')">2</button></li>
+      <li><button onclick="clickBtn('3')">3</button></li>
+      <li><button onclick="clickBtn('/')">&#247;</button></li> <!-- 나누기 -->
+      <li><button onclick="clickBtn('4')">4</button></li>
+      <li><button onclick="clickBtn('5')">5</button></li>
+      <li><button onclick="clickBtn('6')">6</button></li>
+      <li><button onclick="clickBtn('-')">-</button></li> <!-- 빼기 -->
+      <li><button onclick="clickBtn('7')">7</button></li>
+      <li><button onclick="clickBtn('8')">8</button></li>
+      <li><button onclick="clickBtn('9')">9</button></li>
+      <li><button onclick="clickBtn('+')">+</button></li> <!-- 더하기 -->
+      <li><button onclick="clickBtn('.')">.</button></li>
+      <li><button onclick="clickBtn('0')">0</button></li>
+      <li><button onclick="backspace()"><i class='fas fa-backspace'></i></button></li> <!-- 하나씩지우개버튼 -->
+      <li><button onclick="result()">=</button></li> <!-- 결과값보기 -->
+    </ul>
+  </div>
+</body>
+</html>
