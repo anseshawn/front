@@ -8,18 +8,43 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    let startDan = document.getElementById("startDan").value;
-    let endDan = document.getElementById("endDan").value;
-    let temp = "";
-    if(startDan > endDan){
-      temp = startDan;
-      startDan = endDan;
-      endDan = temp;
-    }
+    
+    function cal() {
+      let startDan = document.getElementById("startDan").value;
+      let endDan = document.getElementById("endDan").value;
+      let printCol = document.getElementById("col").value;
+      let temp = "";
+      let str = "";
+      let cnt = 0;
+
+      if(startDan > endDan){
+        temp = startDan;
+        startDan = endDan;
+        endDan = temp;
+      }
+      str += `<table class="table text-center table-bordered p-2 m-2"><tr>`;
+      for(let i=startDan; i<=endDan; i++){
+        cnt++;
+        str += `<td>**${i}단**<br/>`;
+          for(let j=1; j<=9; j++) {
+            str += `${i} * ${j} = ${i*j}<br/>`;
+          }
+        if(cnt % printCol != 0) {
+          str += `</td>`;
+        }
+        else {
+          str += `</tr>`;
+        }
+      }
+      str += `</table>`;
+      demo.innerHTML = str;
+    };
   </script>
   <title>ex02_구구단.html</title>
 </head>
 <body>
+<p><br/></p>
+<div class="container">
   <h2>구구단 지정열대로 출력하기</h2>
   <pre>
     출력할 구구단의 시작단과 끝단을 입력받고, 또 한 행에 출력할 열의 수를 입력받은 후,
@@ -44,5 +69,8 @@
   <p>
     <input type="button" value="계산하기" onclick="cal()" class="btn btn-success form-control mb-2" />
   </p>
+  <hr/>
+  <div id="demo"></div>
+</div>
 </body>
 </html>
