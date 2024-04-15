@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test7.html(다형성-오버라이드)</title>
+  <script>
+    'use strict';
+    
+    class Shape {
+      constructor(width, height) {
+        this.width = width;
+        this.height = height;
+      }
+      // 사각형면적
+      getArea() {
+        return this.width * this.height;
+      }
+
+    }
+    let shape = new Shape(10,20);
+    console.log("shape: ",shape);
+    console.log("사각형 면적 : ",shape.getArea());
+    console.log('');
+
+    // 자식객체
+    class ChildShape extends Shape {}
+    let childShape = new ChildShape(30,40);
+    console.log("childShape: ", childShape);
+    console.log("ChildShape를 통한 면적 구하기? ", childShape.getArea());
+    console.log('');
+    
+    class ChildShape2 extends Shape {
+      // 원면적(폭(width)를 반지름(r)으로 처리)
+      getArea() {
+        return this.width * this.width * 3.14;
+      }
+    }
+    let childShape2 = new ChildShape2(10,20);
+    console.log("childShape2: ", childShape2);
+    console.log("ChildShape2를 통한 원 넓이 구하기? ", childShape2.getArea());
+
+  </script>
+</head>
+<body>
+  <h2>다형성(오버라이드)</h2>
+  <pre>부모객체가 가진 것을 재정의하여 사용</pre>
+</body>
+</html>

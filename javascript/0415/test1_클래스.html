@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test1.html(클래스)</title>
+  <script>
+    'use strict';
+
+    // 클래스 만들기
+    // 클래스, 대문자클래스명, 중괄호
+    class Member {
+      // 필드명
+      name; // 타입이 없음
+      age;
+
+      // 사용자 지정 생성자
+      // constructor() {}
+      constructor(name, age) {
+        // 역할 : 초기값
+        this.name = name;
+        this.age = age;
+
+        // name;
+        // age;
+        // 원래는 this.를 안 적어도 되기 때문에 필드명을 적지 않아도 됨
+      }
+
+      // 메소드
+      memberPrint() {
+        let job = '학생';
+        console.log("1.성명 : ", this.name, ", 나이 : ", this.age);
+      }
+    }
+
+    // 클래스 호출
+    let member = new Member("홍길동", 25);
+    console.log("1.성명 : ",member.name,", 나이 : ", member.age);
+    
+    // 메소드 호출
+    member.memberPrint();
+  </script>
+</head>
+<body>
+  <h2>클래스 연습</h2>
+</body>
+</html>

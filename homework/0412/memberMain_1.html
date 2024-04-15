@@ -10,11 +10,11 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     let life = 5;
+    let str = "";
     
     function number() {
       let input = document.getElementById("number").value;
       let output = (parseInt(Math.random()*10) + 1);
-      let str = "";
       let heart = document.getElementById("heart");
 
       heart.innerHTML = `<img src="../../../images/40.jpg" width="50px"> x ${life}`;
@@ -37,6 +37,7 @@
           location.href = 'memberMain.html';
         } else {
           life = 5;
+          str = "";
           heart.innerHTML = `<img src="../../../images/40.jpg" width="50px"> x ${life}`;
         }
       }
