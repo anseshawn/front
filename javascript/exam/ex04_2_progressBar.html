@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Bar</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    let num = 100;
+    let time = 0;
+    let statusTime;
+
+    function start() {
+      clearTimeout(statusTime);
+      num -= (parseInt(Math.random() * 5) + 1);
+      
+      if(num > 0) {
+        demo.innerHTML = `<progress value=${num} max="100" min="0" style="width: 80%"></progress> : ${num}`;
+        statusTime = setTimeout(start,500);
+      }
+      else {
+        demo.innerHTML = `<progress value=${num} max="100" min="0" style="width: 80%"></progress> : 타이머 종료!`;
+        clearTimeout(statusTime);
+        return false;
+      }
+    }
+
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>시간제한</h2>
+  <p>
+    <input type="button" value="타이머시작" onclick="start()" class="btn btn-primary mr-4" />
+    <input type="button" value="초기화" onclick="location.reload()" class="btn btn-danger" />
+  </p>
+  <hr/>
+  <div id="demo" style="font-size: 1em; font-weight: bold;"></div>
+</div>
+</body>
+</html>
