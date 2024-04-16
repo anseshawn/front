@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>t06_비동기식.html</title>
+  <script>
+    'use strict';
+
+    // 동기식 콜백함수 (자동적으로 기다렸다가 수행)
+    function printProcess(print) {
+      console.log("동기식 출력"); // 2. 내용
+      console.log(print); // 3. 함수 출력
+      print(); // 4. print변수로 받아온 함수 출력
+    }
+    // 수행순서 : 1. 함수호출
+    // printProcess(function(){
+    //   console.log("1.안녕하세요"); // 5. print변수에서 호출
+    // });
+
+    printProcess(() => console.log("1.안녕하세요"));
+    console.log('');
+
+    // 비동기식 콜백실습...
+    console.log("비동기 출발~~1..."); // 여기까지는 동기식...
+    setTimeout(() => console.log("비동기 출발~~2..."), 1000);
+    console.log("출발3......"); // 동기식
+    console.log('');
+
+    // 비동기 콜백(시간지연)
+    function printDelay(print,time) {
+      setTimeout(print,time);
+    }
+
+    printDelay(() => console.log("비동기 콜백 수행중(2초 후)..."), 2000);
+    printProcess(() => console.log("2.안녕하세요"));
+    console.log('');
+
+  </script>
+</head>
+<body>
+  <h2>동기식(Synchronous Callback)/비동기식(Asynchronous Callback)</h2>
+</body>
+</html>
