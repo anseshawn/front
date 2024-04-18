@@ -21,7 +21,7 @@ function regexCheck() {
   const regex22 = /\d/g;    // 숫자를 포함하고 있는가?
   const regex23 = /\D/g;    // 숫자만 포함하고 있는가? (대문자 = ^ 와 같은 부정의 의미)
   const regex24 = /\w/g;    // 영문자와 숫자, '_'를 포함하고 있는가?
-  const regex25 = /\W/g;    // 영문자와 숫자, '_'만 포함하고 있는가?
+  const regex25 = /\W/g;    // 영문자와 숫자, '_'를 제외한 것을 포함하고 있는가?
   const regex26 = /\s/g;    // 문장 안에 공백(탭포함)을 포함하고 있는가?
 
   let content = document.getElementById("content").value.trim();
