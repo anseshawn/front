@@ -39,27 +39,29 @@
 
         $("#horse1").animate({
           marginLeft: "500px"
-        },ani1, function(){ranking("번개")});
+        },ani1, function(){ranking("번개",ani1)});
         $("#horse2").animate({
           marginLeft: "500px"
-        },ani2, function(){ranking("태양")});
+        },ani2, function(){ranking("태양",ani2)});
         $("#horse3").animate({
           marginLeft: "500px"
-        },ani3, function(){ranking("청룡")});
+        },ani3, function(){ranking("청룡",ani3)});
         $("#horse4").animate({
           marginLeft: "500px"
-        },ani4, function(){ranking("스톰")});
+        },ani4, function(){ranking("스톰",ani4)});
         $("#horse5").animate({
           marginLeft: "500px"
-        },ani5, function(){ranking("플래시")});
+        },ani5, function(){ranking("플래시",ani5)});
       });
     });
 
     let cnt = 0;
     let str = '';
-    function ranking(horse){
+    function ranking(horse, time){
       cnt++;
-      str += `${cnt}등: ${horse}<br/>`; 
+      time = time / 1000 +"";
+      time = time.substring(0,4);
+      str += `${cnt}등: ${horse} (시간: ${time}초)<br/>`; 
       demo.innerHTML = str;
     }
   </script>
